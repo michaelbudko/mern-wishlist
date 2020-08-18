@@ -1,11 +1,14 @@
 import React, { Component } from "react";
-import { Container, ListGroup, ListGroupItem, Button} from "reactstrap";
+import { Container, ListGroup, ListGroupItem, Button, FormGroup, Label, Input } from "reactstrap";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { connect } from "react-redux";
 import { getItems, deleteItem } from "../actions/itemActions";
 import PropTypes from "prop-types";
 
 class WishList extends Component {
+    state = {
+        items: this.props.item
+    }
 
     componentDidMount() {
         this.props.getItems();
@@ -13,17 +16,20 @@ class WishList extends Component {
 
     onDeleteClick = (id) => {
         this.props.deleteItem(id);
-    };
+    };    
 
     render() {
+
        const { items } = this.props.item;
+
        return(
         <Container>
             <ListGroup>
                 <TransitionGroup className="WishList">
+                 {/* show items that are not secret */}      
                   {items.map(({_id, itemName}) => (
                     <CSSTransition key={_id} timeout={200} classNames="fade">
-                        <ListGroupItem>
+                        <ListGroupItem style={{backgroundColor: 'white'}}>
                             <Button
                                 className="remove-btn"
                                 color="danger"

@@ -15,7 +15,8 @@ import { addItem } from "../actions/itemActions";
 class ItemModal extends Component {
     state = {
         modal: false, 
-        name: ""
+        name: "",
+        secret: false
     }
 
     toggle = () => {
@@ -32,7 +33,7 @@ class ItemModal extends Component {
         e.preventDefault();
 
         const newItem = {
-            itemName: this.state.name
+            itemName: this.state.name,
         }
 
         //add item via addItem action
@@ -63,14 +64,15 @@ class ItemModal extends Component {
                                 <Input
                                   type="text"
                                   name="name"
-                                  id="item"
+                                  secret = "false"
+                                  id ="item"
                                   placeholder="Funny socks"
                                   onChange={this.onChange}
                                 >
                                 </Input>
                                 <Button
                                   color="dark"
-                                  style={{marginTop: "2rem"}}
+                                  style={{marginTop: "0.69rem", marginBottom: "0rem"}}
                                   block
                                 >Add</Button>
                             </FormGroup>
