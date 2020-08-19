@@ -19,4 +19,4 @@ Clone this repo to your local machine using https://github.com/mikhailbudko/mern
 ## Contact
 * mikhail.budko@outlook.com
 ## License
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/mikhailbudko/csgo-predictions/blob/master/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/mikhailbudko/mern-wishlist/blob/master/LICENSE) file for details.
